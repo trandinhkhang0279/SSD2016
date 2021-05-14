@@ -28,6 +28,7 @@ COCO_CLASSES = ('person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus',
                 'keyboard', 'cell phone', 'microwave oven', 'toaster', 'sink',
                 'refrigerator', 'book', 'clock', 'vase', 'scissors',
                 'teddy bear', 'hair drier', 'toothbrush')
+# COCO_CLASSES = ('vehicle', 'pedestrian', 'cyclist')
 
 
 def get_label_map(label_file):
@@ -83,8 +84,8 @@ class COCODetection(data.Dataset):
         in the target (bbox) and transforms it.
     """
 
-    def __init__(self, root, image_set='trainval35k', transform=None,
-                 target_transform=COCOAnnotationTransform(), dataset_name='MS COCO'):
+    def __init__(self, root, image_set='train', transform=None,
+                 target_transform=COCOAnnotationTransform(), dataset_name='COCO Format'):
         sys.path.append(osp.join(root, COCO_API))
         from pycocotools.coco import COCO
         self.root = osp.join(root, IMAGES, image_set)
