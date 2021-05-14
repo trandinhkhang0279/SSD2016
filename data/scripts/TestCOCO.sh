@@ -52,11 +52,10 @@ echo "Finished downloading. Now extracting ..."
 #unzip ../images/train2017.zip -d ../images
 echo "Extracting val images ..."
 unzip ../images/val2017.zip -d ../images
-mv ../images/val2017 ../images/train2017
 echo "Extracting annotations ..."
 unzip ./annotations_trainval2017.zip
 
-cp ./annotations/annotations/instances_val2017.json ./annotations/annotations/instances_train.json
+cp ./annotations/annotations/instances_val2017.json ./annotations/instances_train.json
 
 echo "Removing zip files ..."
 #rm ../images/train2014.zip
